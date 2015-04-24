@@ -7,3 +7,69 @@ Author URI: http://dimpurr.com
 Description: A Responsive Flat WordPress Theme
 Text Domain: slackview
 */
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+.header {
+	position: relative;
+	margin: 0;
+	padding: 0;
+	height: 40%;
+	min-height: 400px;
+	color: #CCC;
+	color: rgba(255,255,255,0.5);
+	background-image: url('img/background.png');
+	background-size: cover;
+	background-position: 50% 75%;
+}
+
+.header a {
+	color: #EEE;
+	color: rgba(255,255,255,0.8);
+	text-decoration: none;
+}
+
+.header_nav {
+	position: fixed;
+	top: 0;
+	z-index: 1;
+	width: 100%;
+	text-align: center;
+	background: #777;
+	background: rgba(12,13,14,0.5);
+}
+
+.header_nav ul {
+	margin: 0;
+	padding: 0;
+}
+
+.header_nav li {
+	margin: 0;
+	padding: 8px 16px;
+	display: inline-block;
+}
+
+.header_hgroup {
+	position: absolute;
+	bottom: 20%;
+	left: 20%;
+	padding: 35px 80px 30px 60px;
+	background: rgba(0,0,0,0.5);
+}
+
+.header h1 {
+	margin: 0;
+	padding: 0;
+	font-size: 36px;
+}
+
+.header h2 {
+	margin: 14px 0 0 0;
+	padding: 14px 0 0 0;
+	font-size: 18px;
+	border-top: 1px dashed #777;
+}
