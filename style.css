@@ -32,14 +32,18 @@ body {
 	text-decoration: none;
 }
 
+.header a:hover {
+	color: rgba(255,255,255,0.7);
+}
+
 .header_nav {
 	position: fixed;
 	top: 0;
 	z-index: 1;
 	width: 100%;
 	text-align: center;
-	background: #777;
-	background: rgba(12,13,14,0.5);
+	background: #3A3434;
+	box-shadow: 0 0 2px #444;
 }
 
 .header_nav ul {
@@ -49,8 +53,13 @@ body {
 
 .header_nav li {
 	margin: 0;
-	padding: 8px 16px;
 	display: inline-block;
+	font-size: 14px;
+}
+
+.nav_main li {
+	margin: 12px 16px;
+	padding: 0;
 }
 
 .header_hgroup {
@@ -58,7 +67,9 @@ body {
 	bottom: 20%;
 	left: 20%;
 	padding: 35px 80px 30px 60px;
-	background: rgba(0,0,0,0.5);
+	 max-width: 25%;
+	background: #3A3434;
+	background: rgba(58, 52, 52, 0.86);
 }
 
 .header h1 {
@@ -72,4 +83,46 @@ body {
 	padding: 14px 0 0 0;
 	font-size: 18px;
 	border-top: 1px dashed #777;
+}
+
+.content {
+	position: relative;
+	padding: 0 300px 0 160px;
+}
+
+.sidebar {
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 300px;
+	height: 100%;
+	background: #EEE;
+	border-left: 1px solid #DDD;
+}
+
+.post {
+	position: relative;
+	margin: 0;
+	padding: 80px 80px 80px 100px;
+	border-bottom: 1px solid #DDD;
+}
+
+.post_header, .post_content {
+	margin: 0 auto;
+	max-width: 80%;
+}
+
+.post_meta {
+	position: absolute;
+	left: -160px;
+	top: 0;
+	width: 160px;
+	height: 100%;
+	background: #3A3434;
+	border-bottom: 1px solid #444;
+}
+
+.post img {
+	max-width: 100%;
+	height: auto;
 }

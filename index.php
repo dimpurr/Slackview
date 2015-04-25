@@ -5,6 +5,9 @@
 
 <article <?php post_class(); ?>>
 	<header class="post_header">
+		<div class="post_meta">
+			
+		</div>
 		<?php if ( has_post_thumbnail() ) { the_post_thumbnail(); } ?>
 	</header>
 	<div class="post_content">

@@ -24,7 +24,9 @@
 <header class="header">
 	
 <nav class="header_nav">
-	<?php wp_nav_menu( array( 'theme_location' => 'main' ) ); ?>
+	<div class="nav_main">
+		<?php wp_nav_menu( array( 'theme_location' => 'main' ) ); ?>
+	</div>
 </nav>
 
 <hgroup class="header_hgroup">
@@ -37,3 +39,5 @@
 </hgroup>
 
 </header>
+
+<div class="content">
