@@ -11,14 +11,77 @@ Text Domain: slackview
 body {
 	margin: 0;
 	padding: 0;
+	color: #333;
+}
+
+p {
+	color: #333;
+}
+
+a {
+	color: #121314;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+q, blockquote {
+	margin: 0;
+	padding: 0 42px;
+	border-left: 8px solid #EEE;
+}
+
+.post_content p {
+	margin: 32px 0;
+	font-size: 18px;
+	line-height: 1.75em;
+}
+
+.post_content a {
+	border-bottom: 1px solid #DDD;
+}
+
+.post_content a:hover {
+	border-bottom: 1px solid #AAA;
+	text-decoration: none;
+}
+
+.post_content img {
+	max-width: 100%;
+	height: auto;
+}
+
+.wp-caption {
+	text-align: center;
+}
+
+.wp-caption a {
+	border: none;
+}
+
+.wp-caption a:hover {
+	border: none;
+	opacity: 0.95;
+}
+
+.wp-caption img {
+	border-radius: 2px;
+}
+
+.wp-caption p {
+	margin: 2px 0;
+	font-style: italic;
+	color: #444;
 }
 
 .header {
 	position: relative;
 	margin: 0;
 	padding: 0;
-	height: 40%;
-	min-height: 400px;
+	height: 60vh;
+	min-height: 300px;
 	color: #CCC;
 	color: rgba(255,255,255,0.5);
 	background-image: url('img/background.png');
@@ -103,13 +166,14 @@ body {
 .post {
 	position: relative;
 	margin: 0;
-	padding: 80px 80px 80px 100px;
+	padding: 80px 80px 80px 80px;
 	border-bottom: 1px solid #DDD;
 }
 
 .post_header, .post_content {
 	margin: 0 auto;
-	max-width: 80%;
+	width: 100%;
+	max-width: 600px;
 }
 
 .post_meta {
@@ -118,11 +182,72 @@ body {
 	top: 0;
 	width: 160px;
 	height: 100%;
-	background: #3A3434;
+	background: #2A2424;
 	border-bottom: 1px solid #444;
 }
 
-.post img {
-	max-width: 100%;
-	height: auto;
+.post_img {
+	position: relative;
+	z-index: -1;
+	margin: -80px -190px -200px -190px;
+	height: 400px;
+	background-size: cover;
+	background-position: center;
+	box-shadow: 0 0 200px rgba(255,255,255,0.2) inset;
+}
+
+.post_img::before {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	height: 80%;
+	width: 100%;
+	background-image: -webkit-linear-gradient(bottom, #FFF, rgba(255, 255, 255, 0));
+	background-image: -o-linear-gradient(bottom, #FFF, rgba(255, 255, 255, 0));
+	background-image: linear-gradient(to top, #FFF, rgba(255, 255, 255, 0));
+}
+
+.post_title {
+	margin-bottom: 72px;
+	font-size: 48px;
+	line-height: 52px;
+	text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.56);
+}
+
+.page_nav {
+	margin-left: -160px;
+	text-align: right;
+}
+
+.page_nav .page-numbers {
+	display: inline-block;
+	margin: 0 -4px 0 0;
+	padding: 16px 26px;
+	width: clac((100vw - 300 - 2*160)/9);
+	text-align: center;
+}
+
+.page_nav a:hover {
+	background: #F5F5F5;
+	text-decoration: none;
+}
+
+.page_nav .current {
+	background: #777;
+	color: #EEE;
+}
+
+.footer {
+	margin: 0;
+	padding: 2px 10px;
+	width: 100%;
+	background: #DDD;
+	border-top: 1px solid #AAA;
+	box-shadow: 1px 0 1px #EEE inset;
+}
+
+.footer p {
+	display: inline-block;
+	font-size: 14px;
 }

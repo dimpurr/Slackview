@@ -17,6 +17,8 @@
 
 	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
 
+	<?php if ( is_user_logged_in() ) { echo '<style type="text/css" media="screen"> .header_nav { top: 32px; } </style>'; } ?>
+
 </head>
 
 <body <?php body_class(); ?>>
