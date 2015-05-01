@@ -33,33 +33,40 @@ q, blockquote {
 	border-left: 8px solid #EEE;
 }
 
-input {
+input, textarea, button, .comment_list .comment-reply-link {
 	padding: 6px 8px;
 	border: 1px solid #DDD;
 	font-size: 14px;
 	border-radius: 2px;
 }
 
-input:active, input:focus {
+input:active, input:focus, textarea:focus {
 	outline: none;
 	border-color: #AAA;
 }
 
-input[type="submit"], input[type="button"], button {
+input[type="submit"], input[type="button"], button, .comment_list .comment-reply-link {
 	padding: 6px 12px;
 	background: #EEE;
 	border-color: #BBB;
 }
 
-input[type="submit"]:hover, input[type="button"]:hover, button:hover {
+input[type="submit"]:hover, input[type="button"]:hover, button:hover, .comment_list .comment-reply-link:hover {
 	background: #F3F3F3;
-	border-color: #AAA;
+	border-color: #AAA;	
+	text-decoration: none;
 }
 
-input[type="submit"]:active, input[type="button"]:active, button:active {
+input[type="submit"]:active, input[type="button"]:active, button:active, .comment_list .comment-reply-link:active {
 	color: #EEE;
 	background: #AAA;
 	border-color: #AAA;
+}
+
+.clear_both, .comment_form::after, .comment-body::after {
+	content: "";
+	display: block;
+	clear: both;
 }
 
 .post_content p {
@@ -78,11 +85,13 @@ input[type="submit"]:active, input[type="button"]:active, button:active {
 }
 
 .post_content img {
-	max-width: 100%;
-	height: auto;
+	max-width: 100% !important;
+	height: auto !important;
 }
 
 .wp-caption {
+	width: 100% !important;
+	margin-bottom: 48px;
 	text-align: center;
 }
 
@@ -131,7 +140,7 @@ input[type="submit"]:active, input[type="button"]:active, button:active {
 .header_nav {
 	position: fixed;
 	top: 0;
-	z-index: 1;
+	z-index: 10;
 	width: 100%;
 	text-align: center;
 	background: #3A3434;
@@ -141,17 +150,73 @@ input[type="submit"]:active, input[type="button"]:active, button:active {
 .header_nav ul {
 	margin: 0;
 	padding: 0;
+	box-shadow: 0 0 2px #444;
 }
 
 .header_nav li {
+	position: relative;
 	margin: 0;
 	display: inline-block;
 	font-size: 14px;
 }
 
 .nav_main li {
-	margin: 12px 16px;
+	margin: 0;
+	padding: 12px 16px;
+}
+
+.nav_main li a {
+	line-height: 20px;
+}
+
+.header_nav li ul, .header_nav li ul li ul {
+	display: none;
+}
+
+.header_nav li:hover > ul, .header_nav li:hover > ul li:hover > ul  {
+	display: block;
+}
+
+.header_nav li ul {
+	position: absolute;
+	left: 0;
+	top: 40px;
+	margin-top: 4px;
+	margin-left: -20px;
 	padding: 0;
+	text-align: left;
+	background: #3A3434;
+}
+
+.header_nav li ul li {
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+
+.header_nav li ul a {
+	display: block;
+	margin: 0;
+	padding: 12px 12px 12px 36px;
+	min-width: 100px;
+	width: auto;
+}
+
+.header_nav li ul a:hover {
+	background: rgba(123,123,123,0.1);
+}
+
+.header_nav li ul li ul {
+	top: 0;
+	left: 100%;
+	margin-left: 3px;
+	margin-top: 0;
+}
+
+.header_nav li ul li.menu-item-has-children {
+	margin-top: 0;
+	border-right: 3px solid #4A4A4A;
+	border-bottom: none;
 }
 
 .header_hgroup {
@@ -256,6 +321,183 @@ input[type="submit"]:active, input[type="button"]:active, button:active {
 	text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.56);
 }
 
+.comment_list {
+	padding: 0;
+	margin: 0;
+}
+
+.comment_list li.comment {
+	position: relative;
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+
+.comment_list li.comment.depth-1 {
+	border-bottom: 1px solid #DDD;
+}
+
+.comment_list li ol.children {
+	margin: 0;
+	padding: 0;
+}
+
+.comment_list li ol.children li {
+	border-top: 1px solid #EEE;
+}
+
+.comment_list li.comment::before {
+	content: "";
+	display: block;
+	position: absolute;
+	z-index: 1;
+	left: -160px;
+	top: 0;
+	width: 160px;
+	height: 1px;
+	background: #333;
+}
+
+.comment-body {
+	border-top: 1px solid #FFF;
+	border-top: 1px solid transparent;
+	margin-top: -1px;
+}
+
+.comment-body:hover {
+	border-top: 1px solid #BBB;
+}
+
+.comment-meta a {
+	word-spacing: 20px;
+}
+
+.comment_list .avatar {
+	float: left;
+	margin: -4px 16px 12px 12px;
+	border: 1px solid #DDD;
+	border-radius: 2px;
+}
+
+.comment_list .comment-author {
+	padding-top: 18px;
+	margin-bottom: -10px;
+	line-height: 22px;
+}
+
+.comment_list .says {
+	display: none;
+}
+
+.comment_list .comment-reply-link {
+	display: none;
+	z-index: 1;
+	position: absolute;
+	right: 18px;
+	top: 36px;
+}
+
+.comment_list .comment-body p {
+	margin-left: 86px;
+	margin-right: 84px;
+}
+
+.comment-body:hover > .reply .comment-reply-link {
+	display: block;
+}
+
+.comment_form {
+	position: relative;
+	margin-top: 80px;
+}
+
+.comment_form_meta, .logged-in-as, .comment-meta, .comment-reply-title small {
+	float: left;
+	margin: 0;
+	margin-left: -160px;
+	padding: 16px 16px 24px 16px;
+	width: 160px;
+	box-sizing: border-box;
+	background: #2A2424;
+	color: #777;
+}
+
+.comment-meta, .comment-reply-title small {
+	z-index: 1;
+	position: absolute;
+	left: 0;
+	top: 0;
+	margin-top: 1px;
+	height: 100%;
+}
+
+.comment-reply-title small {
+	top: -1px;
+	padding-top: 48px;
+	border: 1px solid #333;
+	border-width: 1px 0;
+}
+
+.comment-reply-title a {
+	margin: 0 6px;
+}
+
+.comment_form_meta a, .logged-in-as a, .comment-reply-title small a {
+	color: #999;
+}
+
+.comment-meta a {
+	color: #777;
+}
+
+.comment_form_meta input {
+	width: 100%;
+	padding: 16px 2px 8px 2px;
+	box-sizing: border-box;
+	background: none;
+	background: transparent;
+	color: #EEE;
+	border: none;
+	border-bottom: 1px solid #333;
+	border-radius: 0;
+}
+
+.comment_form_meta input:hover {
+	border-bottom: 1px solid #555;
+}
+
+.comment_form_meta input:focus {
+	border-bottom: 1px solid #999;
+}
+
+.comment_form textarea {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+	padding: 24px 32px;
+	font-size: 15px;
+	line-height: 1.8em;
+	border-width: 1px 0;
+	border-radius: 0;
+}
+
+.comment_form input[type="submit"] {
+	position: absolute;
+	right: 18px;
+	bottom: 24px;
+}
+
+.comment_form h3 {
+	position: absolute;
+	top: -80px;
+	left: 0;
+	height: 80px;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 48px 0 22px 32px;
+}
+
 .page_nav {
 	margin-left: -160px;
 	text-align: right;
@@ -327,6 +569,10 @@ input[type="submit"]:active, input[type="button"]:active, button:active {
 
 .widget .searchform label {
 	display: none;
+}
+
+.widget .searchform input[type="text"] {
+	width: 140px;
 }
 
 .widget #wp-calendar td {
