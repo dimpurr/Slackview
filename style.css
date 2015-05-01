@@ -1,7 +1,7 @@
 /*
 Theme Name: Slackview
 Theme URI: http://blog.dimpurr.com/Slackview
-Version: 0.2
+Version: 0.3
 Author: Dimpurr
 Author URI: http://dimpurr.com
 Description: A Responsive Flat WordPress Theme
@@ -127,6 +127,15 @@ input[type="submit"]:active, input[type="button"]:active, button:active, .commen
 	background-position: 50% 75%;
 }
 
+.single .header {
+	top: -300px;
+	margin-bottom: -300px;
+	top: -60vh;
+	margin-bottom: -60vh;
+	top: calc(-60vh + 44px);
+	margin-bottom: calc(-60vh + 44px);
+}
+
 .header a {
 	color: #EEE;
 	color: rgba(255,255,255,0.8);
@@ -246,16 +255,17 @@ input[type="submit"]:active, input[type="button"]:active, button:active, .commen
 	position: relative;
 	overflow: hidden;
 	padding: 0 300px 0 160px;
+	box-shadow: 0 0 30px rgba(0, 0, 0, 0.76);
 }
 
-.post {
+.post  {
 	position: relative;
 	margin: 0;
 	padding: 80px 80px 80px 80px;
 	border-bottom: 1px solid #DDD;
 }
 
-.post_header, .post_content {
+.post_header, .post_content, .comment-body {
 	margin: 0 auto;
 	width: 100%;
 	max-width: 600px;
@@ -276,6 +286,10 @@ input[type="submit"]:active, input[type="button"]:active, button:active, .commen
 	margin: 0 16px;
 	padding: 16px 8px;
 	border-bottom: 1px solid #333;
+}
+
+.post_meta section:first-child {
+	padding-top: 50px;
 }
 
 .post_meta section:last-child {
@@ -321,6 +335,74 @@ input[type="submit"]:active, input[type="button"]:active, button:active, .commen
 	text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.56);
 }
 
+.post-navigation {
+	display: none;
+	margin: 0;
+	width: 100%;
+	margin: 0 -80px -80px -80px;
+	padding: 0 80px;
+}
+
+.single .post-navigation {
+	display: block;
+}
+
+.post-navigation .nav-links {
+	margin: 0 -80px -80px -80px;
+}
+
+.post-navigation h2 {
+	display: none;
+}
+
+.post-navigation .nav-previous, .post-navigation .nav-next {
+	display: inline-block;
+	vertical-align: bottom;
+	margin: 0;
+	padding: 32px auto;
+	width: 50%;
+}
+
+.post-navigation a {
+	display: block;
+	position: relative;
+	height: 30px;
+	padding: 48px 64px;
+	text-align: center;
+	font-size: 22px;
+	line-height: 30px;
+	background: #FCFCFC;
+	border-top: 1px solid #DDD;
+}
+
+.post-navigation .nav-previous a {
+	border-right: 1px solid #DDD;
+}
+
+.post-navigation .nav-previous a span:before {
+	content: "← ";
+}
+
+.post-navigation .nav-next a span:after {
+	content: " →";
+}
+
+.post-navigation a:hover {
+	background: #F5F5F5;
+	text-decoration: none;
+}
+
+.post-navigation a:active {
+	background: #DDD;
+	color: #FFF;
+}
+
+.post-navigation .post_nav_title {
+	display: inline-block;
+	vertical-align: middle;
+	line-height: 100%;
+}
+
 .comment_list {
 	padding: 0;
 	margin: 0;
@@ -343,14 +425,18 @@ input[type="submit"]:active, input[type="button"]:active, button:active, .commen
 }
 
 .comment_list li ol.children li {
-	border-top: 1px solid #EEE;
+	border-top: 1px solid #F5F5F5;
 }
 
-.comment_list li.comment::before {
-	content: "";
+.comment_list li ol.children li.comment::before {
+	background: #2C2C2C;
+}
+
+.comment_list li.comment::before, .comment_nav::after {
+	/* content: ""; */
 	display: block;
 	position: absolute;
-	z-index: 1;
+	z-index: 3;
 	left: -160px;
 	top: 0;
 	width: 160px;
@@ -362,6 +448,7 @@ input[type="submit"]:active, input[type="button"]:active, button:active, .commen
 	border-top: 1px solid #FFF;
 	border-top: 1px solid transparent;
 	margin-top: -1px;
+	height: 100%;
 }
 
 .comment-body:hover {
@@ -389,12 +476,22 @@ input[type="submit"]:active, input[type="button"]:active, button:active, .commen
 	display: none;
 }
 
+.comment_list .reply {
+	position: relative;
+}
+
 .comment_list .comment-reply-link {
 	display: none;
 	z-index: 1;
 	position: absolute;
 	right: 18px;
-	top: 36px;
+	top: -52px;
+}
+
+.comment_list .comment-reply-link {
+	display: block;
+	opacity: 0;
+	transition: opacity linear 0.1s;
 }
 
 .comment_list .comment-body p {
@@ -404,6 +501,7 @@ input[type="submit"]:active, input[type="button"]:active, button:active, .commen
 
 .comment-body:hover > .reply .comment-reply-link {
 	display: block;
+	opacity: 1;
 }
 
 .comment_form {
@@ -411,7 +509,7 @@ input[type="submit"]:active, input[type="button"]:active, button:active, .commen
 	margin-top: 80px;
 }
 
-.comment_form_meta, .logged-in-as, .comment-meta, .comment-reply-title small {
+.comment_form_meta, .logged-in-as, .comment-meta, .comment-reply-title small, .comment_nav::before {
 	float: left;
 	margin: 0;
 	margin-left: -160px;
@@ -422,8 +520,8 @@ input[type="submit"]:active, input[type="button"]:active, button:active, .commen
 	color: #777;
 }
 
-.comment-meta, .comment-reply-title small {
-	z-index: 1;
+.comment-meta, .comment-reply-title small, .comment_nav::before  {
+	z-index: 2;
 	position: absolute;
 	left: 0;
 	top: 0;
@@ -447,7 +545,12 @@ input[type="submit"]:active, input[type="button"]:active, button:active, .commen
 }
 
 .comment-meta a {
+	display: none;
 	color: #777;
+}
+
+.comment:hover > .comment-body > .comment-meta a {
+	display: inline-block;
 }
 
 .comment_form_meta input {
@@ -498,12 +601,35 @@ input[type="submit"]:active, input[type="button"]:active, button:active, .commen
 	padding: 48px 0 22px 32px;
 }
 
-.page_nav {
+.comment_nav {
+	z-index: 1;
+	position: relative;
 	margin-left: -160px;
 	text-align: right;
+	background: #FFF;
+	border-bottom: 1px solid #DDD;
 }
 
-.page_nav .page-numbers {
+.comment_nav::before {
+	content: "";
+	margin-left: 0;
+}
+
+.comment_nav::after {
+	content: "";
+	left: 0;
+}
+
+.page_nav {
+	z-index: 1;
+	position: relative;
+	margin-left: -160px;
+	margin-right: 1px;
+	text-align: right;
+	background: #FFF;
+}
+
+.page_nav .page-numbers, .comment_nav a {
 	display: inline-block;
 	margin: 0 -4px 0 0;
 	padding: 16px 26px;
@@ -511,7 +637,7 @@ input[type="submit"]:active, input[type="button"]:active, button:active, .commen
 	text-align: center;
 }
 
-.page_nav a:hover {
+.page_nav a:hover, .comment_nav a:hover {
 	background: #F5F5F5;
 	text-decoration: none;
 }
@@ -526,6 +652,7 @@ input[type="submit"]:active, input[type="button"]:active, button:active, .commen
 }
 
 .sidebar {
+	z-index: 3;
 	position: absolute;
 	right: 0;
 	top: 0;
@@ -536,6 +663,7 @@ input[type="submit"]:active, input[type="button"]:active, button:active, .commen
 }
 
 .widget {
+	box-sizing: border-box;
 	padding: 54px 36px;
 	border-bottom: 1px solid #DDD;
 	color: #777;
@@ -564,6 +692,13 @@ input[type="submit"]:active, input[type="button"]:active, button:active, .commen
 }
 
 .widget li:last-child {
+	position: relative;
+	top: -58px;
+	margin-top: 58px;
+	border-bottom: none;
+}
+
+.sticky-wrapper .widget {
 	border-bottom: none;
 }
 

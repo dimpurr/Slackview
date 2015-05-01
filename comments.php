@@ -1,22 +1,27 @@
 <?php if ( post_password_required() ) { return; } ?>
 
-		<ol class="comment_list">
-			<?php
-				wp_list_comments( array(
-					'style'       => 'ol',
-					'short_ping'  => true,
-					'avatar_size' => 56,
-				) );
-			?>
-		</ol>
+<ol id="comments" class="comment_list">
+<?php wp_list_comments( array(
+	'style'       => 'ol',
+	'short_ping'  => true,
+	'avatar_size' => 56,
+) );
+?>
+</ol>
 
+<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
+<nav class="comment_nav" role="navigation">
+	<?php previous_comments_link( __('&larr; Older Comments','clrs') ); ?>
+	<?php next_comments_link( __('Newer Comments &rarr;','clrs') ); ?>
+</nav>
+<?php endif; ?>
 
 <?php $comments_args = array(
   'id_form'           => 'comment_form',
   'id_submit'         => 'comment_submit',
   'title_reply'       => '',
 
-  'comment_field' =>  '<textarea name="comment" required aria-required="true"></textarea>',
+  'comment_field' =>  '<textarea name="comment" required aria-required="true" placeholder="' . __('Leave a comment','slackview') . '"></textarea>',
 
   'comment_notes_before' => '',
 

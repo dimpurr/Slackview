@@ -1,6 +1,6 @@
 <article <?php post_class(); ?>>
 	<header class="post_header">
-		<div class="post_meta">
+		<div class="post_meta"><div class="sticker">
 			<section class="post_meta_time">
 				<h4><?=__('Date Time','slackview')?></h4>
 				<?php the_time('y/m/j H:i'); ?>
@@ -23,7 +23,7 @@
 			<section class="post_meta_edit">
 				<?php edit_post_link( __( 'Edit Post', 'slackview' ) ); ?>
 			</section>
-		</div>
+		</div></div>
 
 		<?php $post_img = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' )[0];
 		if ( $post_img != '' ) { ?>
@@ -39,4 +39,10 @@
 	<div class="post_content">
 		<?php the_content('READ MORE →'); ?>
 	</div>
+
+	<?php the_post_navigation( array(
+		'next_text' => '<span class="post_nav_title">%title</span>',
+		'prev_text' => '<span class="post_nav_title">%title</span>',
+	) ); ?>
+
 </article>
