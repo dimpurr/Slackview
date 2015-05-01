@@ -4,6 +4,18 @@ register_nav_menus(array(
 	'main' => __( 'Main Menu','slackview' ),
 ));
 
+
+register_sidebar(array(
+	'name' => __( 'Sidebar', 'slackview' ),
+	'id' => 'sidebar',
+	'description' => 'Right Sidebar',
+	'class' => 'widget',
+	'before_widget' => '<aside class="widget">',
+	'after_widget' => '</aside>',
+	'before_title' => '<h3>',
+	'after_title' => '</h3>',
+));
+
 add_theme_support( 'post-thumbnails' );
 add_theme_support( 'automatic-feed-links' );
 add_theme_support( 'title-tag' );
