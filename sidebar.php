@@ -10,15 +10,7 @@
 
 <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
 <script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/jquery.sticky.js"></script>
-<script>
-$(document).ready(function(){
-	s = $(".sticker");
-	for (i=0; i<s.length; i++) {
-		$(s[i]).sticky({topSpacing:80, bottomSpacing: 100});
-	}
-	$(".widget:last-of-type").sticky({topSpacing:44});
-});
-</script>
+<script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/script.js"></script>
 </footer>
 
 </div>

@@ -26,8 +26,24 @@
 <header class="header">
 	
 <nav class="header_nav">
+	<div class="nav_logo_big">
+	<h1 class="nav_title_big">
+		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+			<?php bloginfo( 'name' ); ?>
+		</a>
+	</h1>
+	</div>
+	<div class="nav_logo_left">
+	<h1 class="nav_title_left">
+		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+			<?php bloginfo( 'name' ); ?>
+		</a>
+	</h1>
+	</div>
 	<div class="nav_main">
 		<?php wp_nav_menu( array( 'theme_location' => 'main' ) ); ?>
+	</div>
+	<div class="nav_search">
 	</div>
 </nav>
 

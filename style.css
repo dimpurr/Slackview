@@ -1,7 +1,7 @@
 /*
 Theme Name: Slackview
 Theme URI: http://blog.dimpurr.com/Slackview
-Version: 0.3
+Version: 0.4
 Author: Dimpurr
 Author URI: http://dimpurr.com
 Description: A Responsive Flat WordPress Theme
@@ -132,8 +132,8 @@ input[type="submit"]:active, input[type="button"]:active, button:active, .commen
 	margin-bottom: -300px;
 	top: -60vh;
 	margin-bottom: -60vh;
-	top: calc(-60vh + 44px);
-	margin-bottom: calc(-60vh + 44px);
+	top: calc(-60vh + 78px);
+	margin-bottom: calc(-60vh + 78px);
 }
 
 .header a {
@@ -226,6 +226,31 @@ input[type="submit"]:active, input[type="button"]:active, button:active, .commen
 	margin-top: 0;
 	border-right: 3px solid #4A4A4A;
 	border-bottom: none;
+}
+
+.header_nav .nav_logo_left {
+	float: left;
+	width: 0;
+	opacity: 0;
+}
+
+.header_nav .nav_logo_left a {
+	position: absolute;
+	display: block;
+	width: 100%;
+	text-align: left;
+}
+
+.header_nav .nav_logo_left h1 {
+	margin-top: 10px;
+	margin-left: 24px;
+	font-size: 18px;
+	word-break: no-warp;
+}
+
+
+.header_nav .nav_logo_left, .header_nav .nav_logo_big {
+	transition: all linear 0.3s;
 }
 
 .header_hgroup {
@@ -339,68 +364,34 @@ input[type="submit"]:active, input[type="button"]:active, button:active, .commen
 	display: none;
 	margin: 0;
 	width: 100%;
-	margin: 0 -80px -80px -80px;
+	margin: 80px -80px -80px -80px;
 	padding: 0 80px;
+	text-align: right;
+	border-top: 1px solid #DDD;
+}
+
+.post-navigation div {
+	display: inline-block;
+}
+
+.post-navigation .nav-next {
+	margin-right: -80px;
 }
 
 .single .post-navigation {
 	display: block;
 }
 
-.post-navigation .nav-links {
-	margin: 0 -80px -80px -80px;
-}
-
 .post-navigation h2 {
 	display: none;
 }
 
-.post-navigation .nav-previous, .post-navigation .nav-next {
-	display: inline-block;
-	vertical-align: bottom;
-	margin: 0;
-	padding: 32px auto;
-	width: 50%;
-}
-
-.post-navigation a {
-	display: block;
-	position: relative;
-	height: 30px;
-	padding: 48px 64px;
-	text-align: center;
-	font-size: 22px;
-	line-height: 30px;
-	background: #FCFCFC;
-	border-top: 1px solid #DDD;
-}
-
-.post-navigation .nav-previous a {
-	border-right: 1px solid #DDD;
-}
-
-.post-navigation .nav-previous a span:before {
+.post-navigation .nav-previous a:before {
 	content: "← ";
 }
 
-.post-navigation .nav-next a span:after {
+.post-navigation .nav-next a:after {
 	content: " →";
-}
-
-.post-navigation a:hover {
-	background: #F5F5F5;
-	text-decoration: none;
-}
-
-.post-navigation a:active {
-	background: #DDD;
-	color: #FFF;
-}
-
-.post-navigation .post_nav_title {
-	display: inline-block;
-	vertical-align: middle;
-	line-height: 100%;
 }
 
 .comment_list {
@@ -629,7 +620,7 @@ input[type="submit"]:active, input[type="button"]:active, button:active, .commen
 	background: #FFF;
 }
 
-.page_nav .page-numbers, .comment_nav a {
+.page_nav .page-numbers, .comment_nav a, .post-navigation a {
 	display: inline-block;
 	margin: 0 -4px 0 0;
 	padding: 16px 26px;
@@ -637,7 +628,7 @@ input[type="submit"]:active, input[type="button"]:active, button:active, .commen
 	text-align: center;
 }
 
-.page_nav a:hover, .comment_nav a:hover {
+.page_nav a:hover, .comment_nav a:hover, .post-navigation a:hover {
 	background: #F5F5F5;
 	text-decoration: none;
 }
