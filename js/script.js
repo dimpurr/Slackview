@@ -8,13 +8,13 @@ $(document).ready(function(){
 
 $(window).scroll(function(){
 	if ($(window).scrollTop() > 5) {
-		$('.nav_logo_big')[0].style.height = 0;
-		$('.nav_logo_big')[0].style.opacity = 0;
-		$('.nav_logo_left')[0].style.opacity = 1;
+		$('.single .nav_logo_big')[0].style.height = 0;
+		$('.single .nav_logo_big')[0].style.opacity = 0;
+		$('.single .nav_logo_left')[0].style.opacity = 1;
 	};
 	if ($(window).scrollTop() <= 5) {
-		$('.nav_logo_big')[0].style.height = "50px";
-		$('.nav_logo_big')[0].style.opacity = 1;
-		$('.nav_logo_left')[0].style.opacity = 0;
+		$('.single .nav_logo_big')[0].style.height = "50px";
+		$('.single .nav_logo_big')[0].style.opacity = 1;
+		$('.single .nav_logo_left')[0].style.opacity = 0;
 	}
 });

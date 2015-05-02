@@ -44,6 +44,9 @@
 		<?php wp_nav_menu( array( 'theme_location' => 'main' ) ); ?>
 	</div>
 	<div class="nav_search">
+		<form id="nav_search_form" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+			<input class="nav_search_input" type="text" name="s" id="s" placeholder="Search" size="10" />
+		</form>
 	</div>
 </nav>
 

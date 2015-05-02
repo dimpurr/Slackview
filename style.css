@@ -1,7 +1,7 @@
 /*
 Theme Name: Slackview
 Theme URI: http://blog.dimpurr.com/Slackview
-Version: 0.4
+Version: 0.5
 Author: Dimpurr
 Author URI: http://dimpurr.com
 Description: A Responsive Flat WordPress Theme
@@ -228,16 +228,38 @@ input[type="submit"]:active, input[type="button"]:active, button:active, .commen
 	border-bottom: none;
 }
 
+.nav_logo_big {
+	height: 0;
+	opacity: 0;
+}
+
+.nav_logo_big h1 {
+	line-height: 50px;
+}
+
+.nav_logo_left h1 {
+	line-height: 25px;
+	vertical-align: middle;
+}
+
+.single .nav_logo_big {
+	height: 50px;
+	opacity: 1;
+}
+
 .header_nav .nav_logo_left {
 	float: left;
 	width: 0;
+}
+
+.single .nav_logo_left {
 	opacity: 0;
 }
 
 .header_nav .nav_logo_left a {
 	position: absolute;
 	display: block;
-	width: 100%;
+	width: 300px;
 	text-align: left;
 }
 
@@ -248,9 +270,31 @@ input[type="submit"]:active, input[type="button"]:active, button:active, .commen
 	word-break: no-warp;
 }
 
-
 .header_nav .nav_logo_left, .header_nav .nav_logo_big {
 	transition: all linear 0.3s;
+}
+
+.header_nav .nav_search {
+	position: absolute;
+	right: 0;
+}
+
+.header_nav .nav_search_input {
+	position: relative;
+	top: -44px;
+	height: 32px;
+	width: 80px;
+	margin: 0;
+	background: transparent;
+	border: none;
+	color: #EEE;
+	transition: all linear 0.1s;
+	padding-left: 48px;
+}
+
+.header_nav .nav_search_input:focus {
+	width: 200px;
+	background: #232425;
 }
 
 .header_hgroup {
