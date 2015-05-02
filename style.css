@@ -348,6 +348,10 @@ input[type="submit"]:active, input[type="button"]:active, button:active, .commen
 	font-weight: normal;
 }
 
+.osx .header h1 {
+	font-weight: bold;
+}
+
 .header h2 {
 	margin: 14px 0 0 0;
 	padding: 14px 0 0 0;
@@ -422,6 +426,10 @@ input[type="submit"]:active, input[type="button"]:active, button:active, .commen
 .page {
 	padding-bottom: 80px;
 	border-bottom: 1px solid #DDD;
+}
+
+.page .post_title {
+	margin-top: 80px;
 }
 
 .page .post_meta_cat, .page .post_meta_tags, .page .post_meta_author {
