@@ -33,8 +33,8 @@ function dpt_pagenav() {
 		'show_all' => false,
 		'type' => 'plain',
 		'end_size'=>'1',
-		'prev_text' => __('Prev Page','slackview'),
-		'next_text' => __('Next Page','slackview')
+		'prev_text' => __('← Prev Page','slackview'),
+		'next_text' => __('Next Page →','slackview')
 	);
 
 	if( $wp_rewrite->using_permalinks() )
