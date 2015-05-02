@@ -12,11 +12,15 @@ function un_sticker() {
 		$(s[i]).unstick();
 	};
 	$(".widget:last-of-type").unstick();	
+	$('.sticky-wrapper').css('height','auto')
 };
 
 function if_sticker() {
-	if ($(window).width() > 600) {	
+	if ($(window).width() >= 1000) {	
 		set_sticker();
+	} else if ($(window).width() >= 600 && $(window).width() < 1000) {
+		set_sticker();
+		$(".widget:last-of-type").unstick();
 	} else {
 		un_sticker();
 	};
