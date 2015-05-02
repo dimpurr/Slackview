@@ -1,12 +1,20 @@
 /*
 Theme Name: Slackview
 Theme URI: http://blog.dimpurr.com/Slackview
-Version: 0.5
+Version: 0.7
 Author: Dimpurr
 Author URI: http://dimpurr.com
 Description: A Responsive Flat WordPress Theme
 Text Domain: slackview
 */
+
+h1, h2, h3, h4, h5, h6, p, q, blockquote, li, a, section {
+	font-family: "Hiragino Sans GB W3", "Hiragino Sans GB", "Microsoft YaHei", "Droid Sans Fallback", "Source Sans", "Wenquanyi Micro Hei", "WenQuanYi Micro Hei Mono", "WenQuanYi Zen Hei", "WenQuanYi Zen Hei", "Apple LiGothic Medium", "SimHei", "ST Heiti", "WenQuanYi Zen Hei Sharp", Sans;
+}
+
+.osx h1, .osx h2, .osx h3, .osx h4, .osx h5, .osx h6, .osx p, .osx q, .osx blockquote, .osx li, .osx a, .osx section {
+	font-family: 'Songti SC', 'STIX' ,serif;
+}
 
 body {
 	margin: 0;
@@ -31,6 +39,31 @@ q, blockquote {
 	margin: 0;
 	padding: 0 42px;
 	border-left: 8px solid #EEE;
+}
+
+li {
+	margin: 6px 0;
+}
+
+li ul {
+	margin: 12px 0 12px 24px;
+}
+
+code, pre {
+	font-family: "Courier", monospace;
+	padding: 2px 6px;
+	font-size: 14px;
+	border: 1px solid #DDD;
+}
+
+code:focus, pre:focus {
+	border-color: #999;
+	background: #FAFAFA;
+	outline: none;
+}
+
+pre {
+	padding: 16px 24px;
 }
 
 input, textarea, button, .comment_list .comment-reply-link {
@@ -312,12 +345,14 @@ input[type="submit"]:active, input[type="button"]:active, button:active, .commen
 	margin: 0;
 	padding: 0;
 	font-size: 36px;
+	font-weight: normal;
 }
 
 .header h2 {
 	margin: 14px 0 0 0;
 	padding: 14px 0 0 0;
 	font-size: 18px;
+	font-weight: normal;
 	border-top: 1px solid rgba(123,123,123,0.4);
 }
 
@@ -695,6 +730,7 @@ input[type="submit"]:active, input[type="button"]:active, button:active, .commen
 	position: relative;
 	margin-left: -160px;
 	margin-right: 1px;
+	margin-bottom: -3px;
 	text-align: right;
 	background: #FFF;
 }
@@ -715,6 +751,7 @@ input[type="submit"]:active, input[type="button"]:active, button:active, .commen
 .page_nav .current {
 	background: #777;
 	color: #EEE;
+	line-height: 24px;
 }
 
 .page_nav .dots {

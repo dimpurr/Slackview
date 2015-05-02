@@ -1,3 +1,8 @@
+function set_code() {
+	$('code').attr('contenteditable','true');
+	$('pre').attr('contenteditable','true');
+}
+
 function set_sticker() {
 	s = $(".sticker");
 	for (i=0; i<s.length; i++) {
@@ -41,6 +46,7 @@ function set_scroll_logo() {
 
 $(document).ready(function(){
 
+	set_code();
 	if_sticker();
 
 	$(window).scroll(function(){
