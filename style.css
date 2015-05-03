@@ -9,7 +9,7 @@ Text Domain: slackview
 */
 
 h1, h2, h3, h4, h5, h6, p, q, blockquote, li, a, section {
-	font-family: "Hiragino Sans GB W3", "Hiragino Sans GB", "Microsoft YaHei", "Droid Sans Fallback", "Source Sans", "Wenquanyi Micro Hei", "WenQuanYi Micro Hei Mono", "WenQuanYi Zen Hei", "WenQuanYi Zen Hei", "Apple LiGothic Medium", "SimHei", "ST Heiti", "WenQuanYi Zen Hei Sharp", Sans;
+	font-family: "Hiragino Sans GB W3", "Hiragino Sans GB", "Microsoft YaHei", "Droid Sans Fallback", "Source Sans", "Wenquanyi Micro Hei", "WenQuanYi Micro Hei Mono", "WenQuanYi Zen Hei", "WenQuanYi Zen Hei", "Apple LiGothic Medium", "SimHei", "ST Heiti", "WenQuanYi Zen Hei Sharp", sans-serif;
 }
 
 .osx h1, .osx h2, .osx h3, .osx h4, .osx h5, .osx h6, .osx p, .osx q, .osx blockquote, .osx li, .osx a, .osx section {
@@ -997,6 +997,19 @@ input[type="submit"]:active, input[type="button"]:active, button:active, .commen
 	width: 100%;
 	text-align: center;
 	box-sizing: border-box;
+}
+
+.page_nav {
+	margin-left: 0;
+}
+
+.sidebar > .widget, .sidebar > .sticky-wrapper {
+	display: block;
+	width: 100%;
+}
+
+.sidebar {
+	  margin-left: 0;
 }
 
 .logged-in-as, .comment-meta, .comment-reply-title small, .comment_nav::before, .comment_list li.pingback::before {
