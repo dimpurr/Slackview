@@ -348,9 +348,9 @@ input[type="submit"]:active, input[type="button"]:active, button:active, .commen
 .header_hgroup {
 	position: absolute;
 	bottom: 20%;
-	left: 20%;
+	left: 15%;
 	padding: 35px 30px 30px 30px;
-	max-width: 25%;
+	max-width: 40%;
 	background: #3A3434;
 	background: rgba(58, 52, 52, 0.66);
 }

