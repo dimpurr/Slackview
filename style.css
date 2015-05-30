@@ -1,7 +1,7 @@
 /*
 Theme Name: Slackview
 Theme URI: http://blog.dimpurr.com/Slackview
-Version: 0.7
+Version: 1.0
 Author: Dimpurr
 Author URI: http://dimpurr.com
 Description: A Responsive Flat WordPress Theme
@@ -54,6 +54,7 @@ code, pre {
 	padding: 2px 6px;
 	font-size: 14px;
 	border: 1px solid #DDD;
+	transition: all ease 0.05s;
 }
 
 code:focus, pre:focus {
@@ -71,6 +72,7 @@ input, textarea, button, .comment_list .comment-reply-link {
 	border: 1px solid #DDD;
 	font-size: 14px;
 	border-radius: 2px;
+	transition: all ease 0.05s;
 }
 
 input:active, input:focus, textarea:focus {
@@ -102,6 +104,11 @@ input[type="submit"]:active, input[type="button"]:active, button:active, .commen
 	clear: both;
 }
 
+#wpadminbar {
+	position: fixed;
+	z-index: 50;
+}
+
 .post_content p {
 	margin: 32px 0;
 	font-size: 18px;
@@ -115,6 +122,7 @@ input[type="submit"]:active, input[type="button"]:active, button:active, .commen
 .post_content a:hover {
 	border-bottom: 1px solid #AAA;
 	text-decoration: none;
+	transition: all ease 0.05s;
 }
 
 .post_content img {
@@ -135,6 +143,7 @@ input[type="submit"]:active, input[type="button"]:active, button:active, .commen
 .wp-caption a:hover {
 	border: none;
 	opacity: 0.95;
+	transition: all ease 0.05s;
 }
 
 .wp-caption img {
@@ -158,6 +167,7 @@ input[type="submit"]:active, input[type="button"]:active, button:active, .commen
 	background-image: url('img/background.png');
 	background-size: cover;
 	background-position: 50% 75%;
+	box-shadow: 0 0 30px rgba(0, 0, 0, 0.76) inset;
 }
 
 .single .header {
@@ -167,6 +177,8 @@ input[type="submit"]:active, input[type="button"]:active, button:active, .commen
 	margin-bottom: -60vh;
 	top: calc(-60vh + 78px);
 	margin-bottom: calc(-60vh + 78px);
+	background-image: none;
+	box-shadow: none;
 }
 
 .header a {
@@ -177,6 +189,7 @@ input[type="submit"]:active, input[type="button"]:active, button:active, .commen
 
 .header a:hover {
 	color: rgba(255,255,255,0.7);
+	transition: all ease 0.05s;
 }
 
 .header_nav {
@@ -247,6 +260,7 @@ input[type="submit"]:active, input[type="button"]:active, button:active, .commen
 
 .header_nav li ul a:hover {
 	background: rgba(123,123,123,0.1);
+	transition: all ease 0.05s;
 }
 
 .header_nav li ul li ul {
@@ -335,10 +349,18 @@ input[type="submit"]:active, input[type="button"]:active, button:active, .commen
 	position: absolute;
 	bottom: 20%;
 	left: 20%;
-	padding: 35px 80px 30px 60px;
+	padding: 35px 30px 30px 30px;
 	max-width: 25%;
 	background: #3A3434;
-	background: rgba(58, 52, 52, 0.86);
+	background: rgba(58, 52, 52, 0.66);
+}
+
+.header {
+	color: rgba(255,255,255,0.7);
+}
+
+.single .header_hgroup {
+	display: none;
 }
 
 .header h1 {
@@ -364,7 +386,6 @@ input[type="submit"]:active, input[type="button"]:active, button:active, .commen
 	position: relative;
 	overflow: hidden;
 	padding: 0 300px 0 160px;
-	box-shadow: 0 0 30px rgba(0, 0, 0, 0.76);
 }
 
 .post  {
@@ -423,7 +444,7 @@ input[type="submit"]:active, input[type="button"]:active, button:active, .commen
 	left: 0;
 }
 
-.page {
+.type-page {
 	padding-bottom: 80px;
 	border-bottom: 1px solid #DDD;
 }
@@ -543,6 +564,11 @@ input[type="submit"]:active, input[type="button"]:active, button:active, .commen
 	background: #2C2C2C;
 }
 
+.comment_list li ol.children li.comment .fn::before {
+	content: "➥ ";
+	color: #DDD;
+}
+
 .comment_list li.comment::before, .comment_nav::after {
 	/* content: ""; */
 	display: block;
@@ -564,6 +590,7 @@ input[type="submit"]:active, input[type="button"]:active, button:active, .commen
 
 .comment-body:hover {
 	border-top: 1px solid #BBB;
+	transition: all ease 0.05s;
 }
 
 .comment-meta a {
@@ -696,6 +723,13 @@ input[type="submit"]:active, input[type="button"]:active, button:active, .commen
 	line-height: 1.8em;
 	border-width: 1px 0;
 	border-radius: 0;
+	background: #F5F5F5;
+	box-shadow: 0 0 10px #DDD inset;
+}
+
+.comment_form textarea:focus {
+	background: #FFF;
+	transition: all ease 0.05s;
 }
 
 .comment_form input[type="submit"] {
@@ -754,6 +788,7 @@ input[type="submit"]:active, input[type="button"]:active, button:active, .commen
 .page_nav a:hover, .comment_nav a:hover, .post-navigation a:hover {
 	background: #F5F5F5;
 	text-decoration: none;
+	transition: all ease 0.05s;
 }
 
 .page_nav .current {
@@ -898,6 +933,10 @@ input[type="submit"]:active, input[type="button"]:active, button:active, .commen
 
 @media (max-width: 600px) {
 
+#wpadminbar {
+	position: fixed;
+}
+
 .header_nav .nav_logo_left, .header_nav .nav_main, .header_nav .nav_search, .header_nav .nav_search_input, .post_meta, .footer {
 	position: static;
 	float: none;
@@ -911,10 +950,14 @@ input[type="submit"]:active, input[type="button"]:active, button:active, .commen
 .single .header {
 	top: 0;
 	margin: 0;
+	background-image: url('img/background.png');
+	box-shadow: 0 0 30px rgba(0, 0, 0, 0.76) inset;
+	height: auto;
+	min-height: 0;
 }
 
 .single .header_nav {
-	  padding-top: 1px;
+	padding-top: 1px;
 }
 
 .single .nav_logo_big {
@@ -923,6 +966,10 @@ input[type="submit"]:active, input[type="button"]:active, button:active, .commen
 
 .single .nav_logo_left {
 	opacity: 1 !important;
+}
+
+.single .header_hgroup {
+	display: block;
 }
 
 .header_nav {
@@ -951,6 +998,10 @@ input[type="submit"]:active, input[type="button"]:active, button:active, .commen
 	padding-left: 8px;
 }
 
+.single .header_hgroup {
+	display: none;
+}
+
 .header_hgroup {
 	max-width: 100%;
 	width: 100%;
@@ -976,8 +1027,21 @@ input[type="submit"]:active, input[type="button"]:active, button:active, .commen
 	padding: 0;
 }
 
-.post {
-	padding: 20px 40px 80px 40px;
+.post, article.page {
+	padding: 20px 30px 80px 30px;
+}
+
+.post_title {
+	margin-top: 80px;
+	margin-bottom: 48px;
+}
+
+.single .post_title {
+	margin-bottom: 36px;
+}
+
+.post_img {
+	margin-bottom: -300px;
 }
 
 .post_meta {
@@ -1032,6 +1096,25 @@ input[type="submit"]:active, input[type="button"]:active, button:active, .commen
 	height: 10px;
 }
 
+.comment_list .comment-body p {
+	margin-right: 24px;
+}
+
+.comment-meta {
+	position: absolute;
+	right: 0;
+	display: inline-block;
+	text-align: right;
+	background: none;
+	width: auto;
+	height: auto;
+	padding: 18px 18px 0 0;
+}
+
+.comment-body:hover .comment-meta a {
+	opacity: 1;
+}
+
 .comment_form_meta, .comment_form textarea, .comment_nav {
 	position: static;
 	float: none;
@@ -1042,6 +1125,7 @@ input[type="submit"]:active, input[type="button"]:active, button:active, .commen
 
 .comment_form textarea {
 	margin-bottom: -12px;
+	padding-right: 32px;
 }
 
 .comment_form input[type="submit"] {
@@ -1054,20 +1138,34 @@ input[type="submit"]:active, input[type="button"]:active, button:active, .commen
 
 .post_meta {
 	width: 100%;
-	margin: -20px -40px 40px -40px;
-	padding: 0 40px 20px 40px;
+	margin: -25px 0px 40px -40px;
+	padding: 0 40px 20px 60px;
 }
 
 .post_meta .sticker {
 	margin: 0 -20px 0 -20px;
 }
 
-.post_meta section:first-child {
-	padding-top: 30px;
+.post_meta section {
+	display: inline-block;
+	margin-left: 0;
+	margin-bottom: 8px;
+	border: none;
+	padding: 0;
+	padding-right: 20px;
 }
 
-.post_meta section {
-	  display: inline-block;
+.post_meta section:first-child {
+	padding-top: 20px;
+}
+
+.single .post_meta section:first-child {
+	padding-top: 35px;
+}
+
+.post_meta section h4 {
+	margin-right: 6px;
+	margin-bottom: 0px;
 }
 
 .page_nav .page-numbers, .comment_nav a, .post-navigation a {
