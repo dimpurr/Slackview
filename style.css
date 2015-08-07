@@ -67,6 +67,11 @@ pre {
 	padding: 16px 24px;
 }
 
+pre code {
+	padding: 0;
+	border: none;
+}
+
 input, textarea, button, .comment_list .comment-reply-link {
 	padding: 6px 8px;
 	border: 1px solid #DDD;
@@ -395,10 +400,10 @@ input[type="submit"]:active, input[type="button"]:active, button:active, .commen
 	border-bottom: 1px solid #DDD;
 }
 
-.post_header, .post_content, .comment-body {
+.post_title, .post_content, .comment-body {
 	margin: 0 auto;
 	width: 100%;
-	max-width: 600px;
+	max-width: 700px;
 }
 
 .post_meta {
@@ -534,7 +539,7 @@ input[type="submit"]:active, input[type="button"]:active, button:active, .commen
 
 .comment_list li.pingback .comment-body::before {
 	content: "";
-	display: inline-block;
+	display: inline;
 	width: 10px;
 }
 
@@ -647,7 +652,7 @@ input[type="submit"]:active, input[type="button"]:active, button:active, .commen
 	margin-top: 80px;
 }
 
-.comment_form_meta, .logged-in-as, .comment-meta, .comment-reply-title small, .comment_nav::before, .comment_list li.pingback::before {
+.comment_form_meta, .logged-in-as, .must-log-in, #reply-title + p, .comment-meta, .comment-reply-title small, .comment_nav::before, .comment_list li.pingback::before {
 	float: left;
 	margin: 0;
 	margin-left: -160px;
@@ -678,7 +683,7 @@ input[type="submit"]:active, input[type="button"]:active, button:active, .commen
 	margin: 0 6px;
 }
 
-.comment_form_meta a, .logged-in-as a, .comment-reply-title small a {
+.comment_form_meta a, .logged-in-as a, .must-log-in a, #reply-title + p a, .comment-reply-title small a {
 	color: #999;
 }
 
@@ -1076,7 +1081,7 @@ input[type="submit"]:active, input[type="button"]:active, button:active, .commen
 	  margin-left: 0;
 }
 
-.logged-in-as, .comment-meta, .comment-reply-title small, .comment_nav::before, .comment_list li.pingback::before {
+.logged-in-as, .must-log-in, #reply-title + p, .comment-meta, .comment-reply-title small, .comment_nav::before, .comment_list li.pingback::before {
 	display: none;
 }
 
