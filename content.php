@@ -25,9 +25,9 @@
 			</section>
 		</div></div>
 
-		<?php $post_img = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' )[0];
-		if ( $post_img != '' ) { ?>
-		<div class="post_img" style="background-image: url('<?=$post_img ?>')"></div>
+		<?php $post_img = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' );
+		if ( $post_img != null ) { ?>
+		<div class="post_img" style="background-image: url('<?=$post_img[0] ?>')"></div>
 		<?php }; ?>
 
 		<?php if ( is_single() ) :
