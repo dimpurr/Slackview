@@ -55,6 +55,7 @@ code, pre {
 	font-size: 14px;
 	border: 1px solid #DDD;
 	transition: all ease 0.05s;
+	white-space: pre-wrap;
 }
 
 code:focus, pre:focus {
