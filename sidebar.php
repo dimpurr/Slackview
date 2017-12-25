@@ -5,7 +5,7 @@
 <footer class="footer" role="contentinfo">
 <p>Theme <a href="http://blog.dimpurr.com/slackview">Slackview</a> by <a href="http://dimpurr.com">Dimpurr</a></p>
 <p>Proudly powered by <a href="http://wordpress.org">WordPress</a></p>
-
+//<p><a href="http://www.miitbeian.gov.cn/">此处填写备案号</a></p>
 <script src="<?php if ($_SERVER['HTTPS'] != "on") 
 	{echo "http://lib.sinaapp.com/js/jquery/2.0/jquery.min.js";}
 	else
